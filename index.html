@@ -3,77 +3,222 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#f6f8fb" />
-  <meta name="description" content="敢为（Ganwei）— 集研发、生产、销售于一体的工具制造商，为全球客户提供全面的 DIY 工具解决方案。" />
+  <meta name="theme-color" content="#0d0f12" />
+  <meta name="description" content="敢为（Ganwei）— 集研发、生产、销售于一体的工具制造商，致力于为全球客户提供全面的 DIY 工具解决方案。" />
+  <meta property="og:title" content="敢为 Ganwei · 工具制造商" />
+  <meta property="og:description" content="全面的 DIY 工具解决方案。点击进入官方网店选购。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ganweitools.com/" />
+  <meta name="robots" content="index,follow" />
   <title>敢为 Ganwei · 工具制造商 | 官方主页</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <div class="page">
-    <header class="header">
-      <div class="brand">
-        <!-- 可替换为 <img src="logo.svg" alt="" class="brand__logo" /> -->
-        <span class="brand__mark" aria-hidden="true"></span>
-        <span class="brand__name">
-          敢为
-          <span class="brand__name-en" lang="en">Ganwei</span>
-        </span>
+<body id="top">
+  <header class="site-header" aria-label="网站头部">
+    <div class="wrap header-row">
+      <a class="brand" href="#top" aria-label="敢为首页">
+        <img class="brand__logo" src="ganwei.svg" alt="敢为 Ganwei 标志" />
+      </a>
+      <nav class="nav" aria-label="产品导航">
+        <a href="#categories" data-i18n="nav.categories">分类</a>
+        <a href="#featured" data-i18n="nav.featured">精选</a>
+        <a href="#principles" data-i18n="nav.principles">理念</a>
+        <a href="#contact" data-i18n="nav.contact">联系</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-link" href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="header.taobao">淘宝店</a>
+        <a class="header-link" href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer">AliExpress</a>
+        <label class="lang-switch" for="langSelect" data-i18n="header.language">语言</label>
+        <select id="langSelect" class="lang-select" aria-label="Language selector">
+          <option value="zh-CN">中文</option>
+          <option value="en">English</option>
+        </select>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main class="main">
-      <section class="hero">
-        <p class="hero__eyebrow">DIY 工具 · 官方入口</p>
-        <h1 class="hero__title">敢为（Ganwei），您身边的工具制造伙伴</h1>
-        <p class="hero__lead">
-          敢为（Ganwei）是集研发、生产、销售于一体的工具制造商，致力于为全球客户提供全面的 DIY 工具解决方案。欢迎前往官方网店浏览产品、了解详情并下单选购。
-        </p>
-        <div class="hero__actions">
-          <!-- 将 href 改为您的网店地址，例如淘宝、京东、有赞、微店等 -->
-          <a
-            class="btn btn--primary"
-            href="https://example.com/your-shop"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            前往官方网店
-            <span class="btn__arrow" aria-hidden="true">→</span>
-          </a>
-          <a class="btn btn--ghost" href="#contact">联系咨询</a>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <p class="hero-kicker">Ganwei Tool Manufacturer</p>
+        <h1 data-i18n="hero.title">Tools that empower DIY.</h1>
+        <p data-i18n="hero.desc">敢为（Ganwei）集研发、生产、销售于一体，为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="hero.btnTaobao">敢为制造-淘宝</a>
+          <a class="btn btn-ghost" href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer">GanweiTools Store</a>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="features" aria-label="企业优势">
-        <ul class="feature-list">
-          <li class="feature-list__item">
-            <strong>研产销一体</strong>
-            <span>从研发到制造与交付，全流程可控、品质可追溯</span>
-          </li>
-          <li class="feature-list__item">
-            <strong>DIY 工具方案</strong>
-            <span>覆盖多场景需求，提供系统化 DIY 工具组合</span>
-          </li>
-          <li class="feature-list__item">
-            <strong>服务全球客户</strong>
-            <span>持续创新产品与服务，助力海内外用户安心选购</span>
-          </li>
-        </ul>
-      </section>
+    <section class="section" id="categories">
+      <div class="wrap">
+        <h2 data-i18n="category.title">Explore by category</h2>
+        <div class="category-row">
+          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="category.c1">手动工具</a>
+          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="category.c2">收纳套装</a>
+          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="category.c3">耗材配件</a>
+          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer">OEM / ODM</a>
+        </div>
+      </div>
+    </section>
 
-      <section class="contact" id="contact">
-        <h2 class="contact__title">联系方式</h2>
-        <p class="contact__text">
-          <!-- 按需填写邮箱、电话或企业微信 -->
-          商务合作：<a href="mailto:contact@example.com">contact@example.com</a>
-        </p>
-      </section>
-    </main>
+    <section class="section section-dark" id="featured">
+      <div class="wrap">
+        <h2 data-i18n="featured.title">Popular essentials</h2>
+        <div class="product-grid">
+          <article class="product">
+            <h3 data-i18n="featured.p1t">DIY 组合工具套装</h3>
+            <p data-i18n="featured.p1d">覆盖家庭维修与日常安装场景。</p>
+            <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="common.view">查看产品 →</a>
+          </article>
+          <article class="product">
+            <h3 data-i18n="featured.p2t">多规格螺丝刀系列</h3>
+            <p data-i18n="featured.p2d">舒适握持，适配多规格维修需求。</p>
+            <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="common.view">查看产品 →</a>
+          </article>
+          <article class="product">
+            <h3 data-i18n="featured.p3t">便携工具箱</h3>
+            <p data-i18n="featured.p3d">高效收纳，便于携带与现场作业。</p>
+            <a href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer" data-i18n="common.view">查看产品 →</a>
+          </article>
+          <article class="product">
+            <h3 data-i18n="featured.p4t">定制化工具方案</h3>
+            <p data-i18n="featured.p4d">支持规格、包装、套装结构定制。</p>
+            <a href="mailto:nzh@ganweitools.com" data-i18n="common.contact">联系定制 →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-    <footer class="footer">
-      <p>© <span id="year"></span> 敢为 Ganwei · 保留所有权利</p>
-    </footer>
-  </div>
+    <section class="section" id="principles">
+      <div class="wrap">
+        <h2 data-i18n="principles.title">Ganwei of principle</h2>
+        <div class="principle-grid">
+          <article>
+            <h3 data-i18n="principles.p1t">研发导向</h3>
+            <p data-i18n="principles.p1d">基于真实使用场景持续优化产品结构与材料选择。</p>
+          </article>
+          <article>
+            <h3 data-i18n="principles.p2t">制造可靠</h3>
+            <p data-i18n="principles.p2d">从工艺到质控全流程管理，保证交付稳定一致。</p>
+          </article>
+          <article>
+            <h3 data-i18n="principles.p3t">全球服务</h3>
+            <p data-i18n="principles.p3d">通过多平台销售与服务网络，支持全球客户快速采购。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-grid">
+      <div>
+        <h4>Store</h4>
+        <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer.taobao">敢为制造-淘宝</a>
+        <a href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer">GanweiTools Store</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="mailto:nzh@ganweitools.com">nzh@ganweitools.com</a>
+        <a href="tel:15171137687">15171137687</a>
+      </div>
+      <div>
+        <h4>Social</h4>
+        <a href="https://www.youtube.com/@ganwei2212" target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+    <p class="copyright">© <span id="year"></span> Ganwei Tools</p>
+  </footer>
+
   <script>
+    const i18n = {
+      "zh-CN": {
+        "nav.categories": "分类",
+        "nav.featured": "精选",
+        "nav.principles": "理念",
+        "nav.contact": "联系",
+        "header.taobao": "淘宝店",
+        "header.language": "语言",
+        "hero.title": "赋能 DIY 的工具方案",
+        "hero.desc": "敢为（Ganwei）集研发、生产、销售于一体，为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。",
+        "hero.btnTaobao": "敢为制造-淘宝",
+        "category.title": "按分类浏览",
+        "category.c1": "手动工具",
+        "category.c2": "收纳套装",
+        "category.c3": "耗材配件",
+        "featured.title": "精选产品",
+        "featured.p1t": "DIY 组合工具套装",
+        "featured.p1d": "覆盖家庭维修与日常安装场景。",
+        "featured.p2t": "多规格螺丝刀系列",
+        "featured.p2d": "舒适握持，适配多规格维修需求。",
+        "featured.p3t": "便携工具箱",
+        "featured.p3d": "高效收纳，便于携带与现场作业。",
+        "featured.p4t": "定制化工具方案",
+        "featured.p4d": "支持规格、包装、套装结构定制。",
+        "common.view": "查看产品 →",
+        "common.contact": "联系定制 →",
+        "principles.title": "敢为的坚持",
+        "principles.p1t": "研发导向",
+        "principles.p1d": "基于真实使用场景持续优化产品结构与材料选择。",
+        "principles.p2t": "制造可靠",
+        "principles.p2d": "从工艺到质控全流程管理，保证交付稳定一致。",
+        "principles.p3t": "全球服务",
+        "principles.p3d": "通过多平台销售与服务网络，支持全球客户快速采购。",
+        "footer.taobao": "敢为制造-淘宝"
+      },
+      "en": {
+        "nav.categories": "Categories",
+        "nav.featured": "Featured",
+        "nav.principles": "Principles",
+        "nav.contact": "Contact",
+        "header.taobao": "Taobao",
+        "header.language": "Language",
+        "hero.title": "Tools that empower DIY.",
+        "hero.desc": "Ganwei integrates R&D, manufacturing, and sales to deliver reliable and easy-to-use DIY tool solutions for global customers.",
+        "hero.btnTaobao": "Ganwei Taobao Store",
+        "category.title": "Explore by category",
+        "category.c1": "Hand Tools",
+        "category.c2": "Storage Kits",
+        "category.c3": "Consumables & Parts",
+        "featured.title": "Popular essentials",
+        "featured.p1t": "DIY Tool Set",
+        "featured.p1d": "For home repair and daily installation tasks.",
+        "featured.p2t": "Multi-bit Screwdriver Series",
+        "featured.p2d": "Comfortable grip for multi-scenario maintenance.",
+        "featured.p3t": "Portable Toolbox",
+        "featured.p3d": "Efficient storage for field and mobile work.",
+        "featured.p4t": "Customized Tool Solutions",
+        "featured.p4d": "Support for specs, packaging, and kit structures.",
+        "common.view": "View product →",
+        "common.contact": "Contact for customization →",
+        "principles.title": "Ganwei of principle",
+        "principles.p1t": "R&D Driven",
+        "principles.p1d": "Continuously optimizing structures and materials for real-world use.",
+        "principles.p2t": "Reliable Manufacturing",
+        "principles.p2d": "End-to-end process and quality control for stable delivery.",
+        "principles.p3t": "Global Service",
+        "principles.p3d": "Supporting fast procurement through multi-platform channels.",
+        "footer.taobao": "Ganwei Taobao Store"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const dict = i18n[lang] || i18n["zh-CN"];
+      document.documentElement.lang = lang === "en" ? "en" : "zh-CN";
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const key = el.getAttribute("data-i18n");
+        if (dict[key]) el.textContent = dict[key];
+      });
+      localStorage.setItem("site_lang", lang);
+    }
+
+    const langSelect = document.getElementById("langSelect");
+    const savedLang = localStorage.getItem("site_lang") || "zh-CN";
+    langSelect.value = savedLang;
+    applyLanguage(savedLang);
+    langSelect.addEventListener("change", (e) => applyLanguage(e.target.value));
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
