@@ -1,0 +1,238 @@
+/* 企业主页 — 轻量样式，可通过 CSS 变量快速换品牌色 */
+
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --text: #1a2332;
+  --text-muted: #5c6b7f;
+  --accent: #0d6efd;
+  --accent-hover: #0b5ed7;
+  --border: #e2e8f0;
+  --radius: 12px;
+  --shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+  --font: "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 页头 */
+.header {
+  margin-bottom: 2rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent), #6366f1);
+  flex-shrink: 0;
+}
+
+.brand__name {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.02em;
+}
+
+/* 主内容区 */
+.main {
+  flex: 1;
+}
+
+.hero {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: clamp(1.75rem, 5vw, 2.5rem);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.hero__eyebrow {
+  margin: 0 0 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+
+.hero__title {
+  margin: 0 0 1rem;
+  font-size: clamp(1.5rem, 4vw, 1.875rem);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.hero__lead {
+  margin: 0 0 1.75rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 52ch;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* 按钮 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn__arrow {
+  transition: transform 0.15s ease;
+}
+
+.btn--primary:hover .btn__arrow {
+  transform: translateX(4px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.btn--ghost:hover {
+  border-color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* 要点列表 */
+.features {
+  margin-top: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 520px) {
+  .feature-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+}
+
+.feature-list__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.feature-list__item strong {
+  font-size: 0.9375rem;
+}
+
+.feature-list__item span {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+/* 联系 */
+.contact {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.contact__title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact__text {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* 页脚 */
+.footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="企业官方主页 — 欢迎访问我们的官方网店" />
+  <title>企业主页</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <div class="brand">
+        <!-- 可替换为 <img src="logo.svg" alt="" class="brand__logo" /> -->
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name">您的企业名称</span>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero">
+        <p class="hero__eyebrow">官方入口</p>
+        <h1 class="hero__title">品质与服务，尽在官方网店</h1>
+        <p class="hero__lead">
+          我们在线上店铺提供完整商品信息与下单服务。点击下方按钮即可前往官方合作平台，安全跳转、放心选购。
+        </p>
+        <div class="hero__actions">
+          <!-- 将 href 改为您的网店地址，例如淘宝、京东、有赞、微店等 -->
+          <a
+            class="btn btn--primary"
+            href="https://example.com/your-shop"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            前往官方网店
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="btn btn--ghost" href="#contact">联系咨询</a>
+        </div>
+      </section>
+
+      <section class="features" aria-label="服务说明">
+        <ul class="feature-list">
+          <li class="feature-list__item">
+            <strong>正品保障</strong>
+            <span>官方渠道，信息同步</span>
+          </li>
+          <li class="feature-list__item">
+            <strong>便捷下单</strong>
+            <span>平台支付与售后体系</span>
+          </li>
+          <li class="feature-list__item">
+            <strong>活动资讯</strong>
+            <span>优惠与新品优先知</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="contact" id="contact">
+        <h2 class="contact__title">联系方式</h2>
+        <p class="contact__text">
+          <!-- 按需填写邮箱、电话或企业微信 -->
+          商务合作：<a href="mailto:contact@example.com">contact@example.com</a>
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> 您的企业名称 · 保留所有权利</p>
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
