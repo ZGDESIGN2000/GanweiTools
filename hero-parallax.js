@@ -29,6 +29,16 @@
   const ROT_Y_MAX = 4;
   const ROT_X_MAX = 3;
 
+  /** 触摸/无鼠标：用“漂浮 + 随滚动”补足动态感 */
+  const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const heroEl = container.closest(".hero");
+  const DRIFT_ENABLED = isCoarsePointer;
+  const DRIFT_X = 0.10; // 归一化幅度（0~1）
+  const DRIFT_Y = 0.08;
+  const DRIFT_SPEED = 0.55; // 速度（越大越快）
+  const SCROLL_FOLLOW_ENABLED = isCoarsePointer;
+  const SCROLL_Y_STRENGTH = 0.22; // 滚动映射到 targetY 的强度（0~1）
+
   /** 未分层时给根 svg 或回退用的 img 加单层视差 */
   function ensureParallaxTargets(root) {
     const layers = root.querySelectorAll(".parallax-layer, [data-depth]");
@@ -56,6 +66,12 @@
   let curRotY = 0;
 
   let lastTs = performance.now();
+  let lastNow = performance.now();
+
+  // 触摸端：额外的目标叠加量（漂浮/滚动）
+  let driftX = 0;
+  let driftY = 0;
+  let scrollTargetY = 0;
 
   const lerp = (a, b, t) => a + (b - a) * t;
 
@@ -89,19 +105,35 @@
     now = now ?? performance.now();
     const dt = Math.min((now - lastTs) / 1000, 0.05);
     lastTs = now;
+    lastNow = now;
+
+    // 触摸端：轻微自动漂浮（不需要用户输入也有生命力）
+    if (!reducedMotion && DRIFT_ENABLED) {
+      const t = now / 1000;
+      driftX = Math.sin(t * DRIFT_SPEED) * DRIFT_X;
+      driftY = Math.cos(t * (DRIFT_SPEED * 0.92)) * DRIFT_Y;
+    } else {
+      driftX = 0;
+      driftY = 0;
+    }
+
+    // 触摸端：随滚动产生层次（滚动时更“高级”）
+    // scrollTargetY 在 scroll 监听里更新；这里直接参与目标叠加
+    const composedTargetX = clamp(targetX + driftX, -1, 1);
+    const composedTargetY = clamp(targetY + driftY + scrollTargetY, -1, 1);
 
     if (reducedMotion) {
-      curX = targetX;
-      curY = targetY;
-      curRotX = targetRotX;
-      curRotY = targetRotY;
+      curX = composedTargetX;
+      curY = composedTargetY;
+      curRotX = (composedTargetY * -ROT_X_MAX);
+      curRotY = (composedTargetX * ROT_Y_MAX);
     } else {
       const tp = 1 - Math.exp(-SMOOTH_POS * dt);
       const tr = 1 - Math.exp(-SMOOTH_ROT * dt);
-      curX = lerp(curX, targetX, tp);
-      curY = lerp(curY, targetY, tp);
-      curRotX = lerp(curRotX, targetRotX, tr);
-      curRotY = lerp(curRotY, targetRotY, tr);
+      curX = lerp(curX, composedTargetX, tp);
+      curY = lerp(curY, composedTargetY, tp);
+      curRotX = lerp(curRotX, (composedTargetY * -ROT_X_MAX), tr);
+      curRotY = lerp(curRotY, (composedTargetX * ROT_Y_MAX), tr);
     }
     applyParallax();
     if (!reducedMotion) {
@@ -113,16 +145,14 @@
     const [nx, ny] = pointerToNormalized(e.clientX, e.clientY);
     targetX = nx;
     targetY = ny;
-    /* 旋转朝向指针，与平移反向组合更易出层次 */
-    targetRotY = nx * ROT_Y_MAX;
-    targetRotX = -ny * ROT_X_MAX;
-
     // reduced-motion：不使用 requestAnimationFrame 循环，但仍要保持跟手
     if (reducedMotion) {
-      curX = targetX;
-      curY = targetY;
-      curRotX = targetRotX;
-      curRotY = targetRotY;
+      const composedTargetX = clamp(targetX + driftX, -1, 1);
+      const composedTargetY = clamp(targetY + driftY + scrollTargetY, -1, 1);
+      curX = composedTargetX;
+      curY = composedTargetY;
+      curRotX = composedTargetY * -ROT_X_MAX;
+      curRotY = composedTargetX * ROT_Y_MAX;
       applyParallax();
     }
   }
@@ -130,14 +160,35 @@
   function resetTargets() {
     targetX = 0;
     targetY = 0;
-    targetRotX = 0;
-    targetRotY = 0;
 
     if (reducedMotion) {
-      curX = targetX;
-      curY = targetY;
-      curRotX = targetRotX;
-      curRotY = targetRotY;
+      curX = 0;
+      curY = 0;
+      curRotX = 0;
+      curRotY = 0;
+      applyParallax();
+    }
+  }
+
+  function updateScrollTarget() {
+    if (!SCROLL_FOLLOW_ENABLED || !heroEl) return;
+    const rect = heroEl.getBoundingClientRect();
+    const vh = Math.max(window.innerHeight, 1);
+    // 将 hero 在视口中的位置映射到 [-1,1]：中心在视口中心时为 0
+    const heroCenterY = rect.top + rect.height / 2;
+    const viewCenterY = vh / 2;
+    const normalized = clamp((heroCenterY - viewCenterY) / (vh * 0.5), -1, 1);
+    // 轻微随滚动：往上滚时背景略向上“逆滑”，增强层次
+    scrollTargetY = -normalized * SCROLL_Y_STRENGTH;
+
+    // reduced-motion 下没有 RAF：滚动时也要立即更新一次
+    if (reducedMotion) {
+      const composedTargetX = clamp(targetX + driftX, -1, 1);
+      const composedTargetY = clamp(targetY + driftY + scrollTargetY, -1, 1);
+      curX = composedTargetX;
+      curY = composedTargetY;
+      curRotX = composedTargetY * -ROT_X_MAX;
+      curRotY = composedTargetX * ROT_Y_MAX;
       applyParallax();
     }
   }
@@ -147,6 +198,12 @@
     /* 指针离开文档（例如移出窗口）时缓慢回中 */
     document.documentElement.addEventListener("mouseleave", resetTargets);
     window.addEventListener("blur", resetTargets);
+
+    if (SCROLL_FOLLOW_ENABLED) {
+      window.addEventListener("scroll", updateScrollTarget, { passive: true });
+      window.addEventListener("resize", updateScrollTarget, { passive: true });
+      updateScrollTarget();
+    }
   }
 
   function startParallax() {
