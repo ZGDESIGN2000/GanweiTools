@@ -12,7 +12,6 @@
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const svgUrl = new URL("hero.svg", document.baseURI || window.location.href).href;
-  const isFileProtocol = window.location.protocol === "file:";
 
   /** 线稿平移：-1 = 与指针反向（远景深度感，更立体）；1 = 与指针同向 */
   const PARALLAX_TRANSLATE_SIGN = -1;
@@ -202,19 +201,8 @@
     startParallax();
   }
 
-  if (isFileProtocol) {
-    loadViaImg();
-    return;
-  }
-
-  fetch(svgUrl)
-    .then((r) => {
-      if (!r.ok) throw new Error("SVG load failed");
-      return r.text();
-    })
-    .then(loadViaInlineSvg)
-    .catch((err) => {
-      console.warn("[hero-lineart] fetch 失败，改用 <img> 回退:", svgUrl, err);
-      loadViaImg();
-    });
+  // 重要：为了在 GitHub Pages 上避免“fetch + innerHTML”把超大 hero.svg 内联进 DOM
+  // 导致主线程卡顿/首屏重排，默认两端都走 <img> 回退路径。
+  // 如果你未来希望分层（多 parallax-layer）粒度更细，再打开 loadViaInlineSvg。
+  loadViaImg();
 })();
