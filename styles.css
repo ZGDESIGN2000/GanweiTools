@@ -7,7 +7,7 @@
   --accent: #84b7ff;
   --font: "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
   /* 与 .header-row 最小高度一致，用于首屏 Hero 扣减顶栏 */
-  --header-height: 72px;
+  --header-height: 76px;
   /* 首屏可用高度（与 .hero min-height 一致），线稿缩放以此为基准 */
   --hero-vh: calc(100svh - var(--header-height));
 }
@@ -45,7 +45,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(13, 15, 18, 0.82);
+  background: rgba(13, 15, 18, 0.76);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--line);
 }
@@ -65,11 +65,11 @@ body {
 }
 
 .brand__logo {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   object-fit: contain;
   filter: brightness(0) invert(1);
-  opacity: 0.9;
+  opacity: 0.82;
 }
 
 .nav {
@@ -495,8 +495,8 @@ body {
   }
 
   .brand__logo {
-    width: 62px;
-    height: 62px;
+    width: 66px;
+    height: 66px;
   }
 
   .footer-grid {
