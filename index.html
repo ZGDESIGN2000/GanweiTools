@@ -8,7 +8,7 @@
   <meta property="og:title" content="敢为 Ganwei · 工具制造商" />
   <meta property="og:description" content="全面的 DIY 工具解决方案。点击进入官方网店选购。" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ganweitools.com/" />
+  <meta property="og:url" content="https://www.ganweitools.com/" />
   <meta name="robots" content="index,follow" />
   <title>GanweiTools · 敢为制造</title>
   <!-- 浏览器标签页/书签图标（SVG，现代浏览器通用） -->
@@ -41,7 +41,8 @@
 
   <main>
     <section class="hero">
-      <div class="wrap hero-inner">
+      <div id="heroLineart" class="hero-lineart" aria-hidden="true"></div>
+      <div class="wrap hero-inner hero-inner--over">
         <p class="hero-kicker">Ganwei Tool Manufacturer</p>
         <h1 data-i18n="hero.title">Tools that empower DIY.</h1>
         <p data-i18n="hero.desc">Ganwei®敢为集研发、生产、销售于一体，为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。</p>
@@ -117,8 +118,8 @@
     <div class="wrap footer-grid">
       <div>
         <h4 data-i18n="footer.sectionStore">-官方商店-</h4>
-        <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer.taobao">敢为制造-TaoBao</a>
-        <a href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer">GanweiTools Store-AliExpress</a>
+        <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="footer.taobao">敢为制造-淘宝</a>
+        <a href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer" data-i18n="footer.aliexpressStore">GanweiTools Store-速卖通</a>
       </div>
       <div>
         <h4 data-i18n="footer.sectionContact">-联系我们-</h4>
@@ -170,7 +171,8 @@
         "footer.sectionStore": "-官方商店-",
         "footer.sectionContact": "-联系我们-",
         "footer.sectionSocial": "-社交媒体-",
-        "footer.taobao": "敢为制造-TaoBao",
+        "footer.taobao": "敢为制造-淘宝",
+        "footer.aliexpressStore": "GanweiTools Store-速卖通",
         "footer.wechat": "微信联系"
       },
       "en": {
@@ -209,6 +211,7 @@
         "footer.sectionContact": "-Contact Us-",
         "footer.sectionSocial": "-Social Media-",
         "footer.taobao": "Ganwei Store-Taobao",
+        "footer.aliexpressStore": "GanweiTools Store-AliExpress",
         "footer.wechat": "WeChat Contact"
       }
     };
@@ -231,5 +234,6 @@
 
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script src="hero-parallax.js" defer></script>
 </body>
 </html>

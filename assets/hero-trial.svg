@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" fill="none" aria-hidden="true">
+  <defs>
+    <style>
+      .stroke { stroke: rgba(180, 200, 230, 0.55); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+      .stroke-soft { stroke: rgba(140, 160, 195, 0.35); stroke-width: 1.2; }
+    </style>
+  </defs>
+  <!-- ÕÐL¿?	BÄ + data-depthc?ït‡öÿbÝY class / data-depth sï -->
+  <g id="layer-back" class="parallax-layer" data-depth="0.25">
+    <circle cx="120" cy="80" r="48" class="stroke-soft"/>
+    <circle cx="680" cy="340" r="72" class="stroke-soft"/>
+    <path d="M40 360h200M560 40h180" class="stroke-soft"/>
+  </g>
+  <g id="layer-mid" class="parallax-layer" data-depth="0.5">
+    <rect x="280" y="120" width="240" height="140" rx="12" class="stroke"/>
+    <path d="M320 200h160M320 230h120" class="stroke"/>
+  </g>
+  <g id="layer-front" class="parallax-layer" data-depth="1">
+    <path d="M400 60 L460 200 L340 200 Z" class="stroke"/>
+    <circle cx="400" cy="320" r="36" class="stroke"/>
+    <path d="M520 260 L620 260 L570 180 Z" class="stroke"/>
+  </g>
+</svg>

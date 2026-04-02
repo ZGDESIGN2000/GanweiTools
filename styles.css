@@ -6,6 +6,16 @@
   --text-soft: #a8b0c0;
   --accent: #84b7ff;
   --font: "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  /* 与 .header-row 最小高度一致，用于首屏 Hero 扣减顶栏 */
+  --header-height: 72px;
+  /* 首屏可用高度（与 .hero min-height 一致），线稿缩放以此为基准 */
+  --hero-vh: calc(100svh - var(--header-height));
+}
+
+@supports (height: 100dvh) {
+  :root {
+    --hero-vh: calc(100dvh - var(--header-height));
+  }
 }
 
 *,
@@ -41,7 +51,7 @@ body {
 }
 
 .header-row {
-  min-height: 72px;
+  min-height: var(--header-height);
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 1rem;
@@ -110,6 +120,13 @@ body {
 }
 
 .hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  /* 首屏：占满视口剩余高度（顶栏以下），移动端用 dvh 适配地址栏伸缩 */
+  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100dvh - var(--header-height));
   border-bottom: 1px solid var(--line);
   background:
     radial-gradient(65% 90% at 80% 0%, rgba(101, 153, 255, 0.16), rgba(101, 153, 255, 0)),
@@ -117,12 +134,149 @@ body {
     var(--bg);
 }
 
+/* 左侧偏暗渐变：压低线稿对标题段的干扰，右侧仍保留图形存在感 */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    118deg,
+    rgba(13, 15, 18, 0.92) 0%,
+    rgba(13, 15, 18, 0.42) 44%,
+    rgba(13, 15, 18, 0.08) 70%,
+    transparent 88%
+  );
+}
+
+@media (max-width: 767px) {
+  .hero::after {
+    background: linear-gradient(
+      165deg,
+      rgba(4, 21, 45, 0.88) 0%,
+      rgba(6, 20, 40, 0.5) 38%,
+      rgba(6, 20, 42, 0.142) 62%,
+      transparent 82%
+    );
+  }
+}
+
+/* Hero 线稿层：Illustrator 导出多为深色描边，需在深色主题下反相为浅色才能看见 */
+.hero-lineart {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.hero-lineart__stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .hero-lineart__stage {
+    justify-content: center;
+    padding-right: 0;
+  }
+}
+
+/*
+ * 线稿缩放（新的 16:9 画幅策略）：
+ * hero.svg 约为 1920×1080（16:9），因此以首屏可用高度 --hero-vh 为基准设定 height，
+ * 利用 aspect-ratio 自动计算宽度，这样更稳定地铺满竖屏手机 / Pad / 桌面。
+ * 同时把 height 设为 > 1.0，配合 .hero overflow:hidden 产生“轻微溢出”的动效空间。
+ */
+.hero-lineart__zoom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  /* 让溢出主要由 svg/img 的 height 控制，zoom 只做很轻微的补偿 */
+  transform: scale(1);
+  transform-origin: center center;
+}
+
+@media (max-width: 767px) {
+  .hero-lineart__zoom {
+    transform-origin: center center;
+  }
+}
+
+/* 横屏且垂直空间很小时：再轻微抬一档，避免上下露边 */
+@media (orientation: landscape) and (max-height: 480px) {
+  .hero-lineart__zoom {
+    transform: scale(1.04);
+  }
+}
+
+.hero-lineart__zoom svg,
+.hero-lineart__zoom img.hero-lineart__graphic {
+  /* 关键：按高度铺满并溢出，宽度由 16:9 自动跟随 */
+  /* 新 hero.svg 画幅：1900×1000，比例约为 1.9:1（19:10） */
+  aspect-ratio: 19 / 10;
+  width: auto;
+  height: calc(var(--hero-vh) * 1.20);
+  max-width: none;
+  max-height: none;
+  /* 防止极端矮高比下宽度偏窄，留一点余量 */
+  min-width: 105vw;
+
+  /* 深色线稿 → 浅色；降低亮度与饱和度，减轻与正文抢对比 */
+  filter: invert(1) brightness(0.72) saturate(0.42);
+  opacity: 0.26;
+}
+
+@media (max-width: 767px) {
+  .hero-lineart__zoom svg,
+  .hero-lineart__zoom img.hero-lineart__graphic {
+    height: calc(var(--hero-vh) * 1.28);
+    min-width: 110vw;
+  }
+}
+
+.hero-lineart__zoom img.hero-lineart__graphic {
+  display: block;
+  object-fit: contain;
+}
+
+.hero-lineart__zoom svg.parallax-layer {
+  transform-box: fill-box;
+}
+
+.hero-lineart__zoom .parallax-layer {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.hero-lineart__zoom img.parallax-layer {
+  transform-box: border-box;
+}
+
+.hero-lineart--error {
+  display: none;
+}
+
 .hero-inner {
-  min-height: clamp(470px, 72vh, 780px);
+  flex: 1;
   display: grid;
   align-content: center;
   justify-items: start;
   gap: 1rem;
+  /* 允许在 flex 布局下正确收缩；避免 grid 默认 min-height:auto 撑破父级 */
+  min-height: 0;
+}
+
+.hero-inner--over {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-kicker {
