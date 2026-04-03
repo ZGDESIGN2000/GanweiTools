@@ -4,13 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0d0f12" />
-  <meta name="description" content="Ganwei®敢为集研发、生产、销售于一体，为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。" />
-  <meta property="og:title" content="敢为 Ganwei · 工具制造商" />
-  <meta property="og:description" content="为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。" />
+  <meta name="description" content="敢想、敢为。专注木工工具研发与制造。" />
+  <meta property="og:title" content="Ganwei®敢为制造" />
+  <meta property="og:description" content="敢想、敢为。专注木工工具研发与制造。" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.ganweitools.com/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ganwei®敢为制造" />
+  <meta name="twitter:description" content="敢想、敢为。专注木工工具研发与制造。" />
   <meta name="robots" content="index,follow" />
-  <title>GanweiTools · 敢为制造</title>
+  <title>Ganwei®敢为制造</title>
   <!-- 浏览器标签页/书签图标（SVG，现代浏览器通用） -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
@@ -24,7 +27,7 @@
       <nav class="nav" aria-label="产品导航">
         <a href="#categories" data-i18n="nav.categories">分类</a>
         <a href="#featured" data-i18n="nav.featured">精选</a>
-        <a href="#principles" data-i18n="nav.principles">理念</a>
+        <a href="#principles" data-i18n="nav.principles">理念与合作</a>
         <a href="#contact" data-i18n="nav.contact">联系</a>
       </nav>
       <div class="header-actions">
@@ -42,8 +45,8 @@
       <div id="heroLineart" class="hero-lineart" aria-hidden="true"></div>
       <div class="wrap hero-inner hero-inner--over">
         <p class="hero-kicker">Ganwei Tool Manufacturer</p>
-        <h1 data-i18n="hero.title">Tools that empower DIY.</h1>
-        <p data-i18n="hero.desc">Ganwei®敢为集研发、生产、销售于一体，为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。</p>
+        <h1 data-i18n="hero.title">赋能 DIY 无限可能</h1>
+        <p class="hero-desc" data-i18n="hero.desc">Ganwei® 敢为| 集研发、生产于一体。为合作伙伴及用户提供专业的工具解决方案。</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="hero.btnTaobao">敢为制造-淘宝</a>
           <a class="btn btn-ghost" href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer">GanweiTools Store</a>
@@ -91,22 +94,49 @@
       </div>
     </section>
 
-    <section class="section" id="principles">
-      <div class="wrap">
-        <h2 data-i18n="principles.title">Ganwei of principle</h2>
-        <div class="principle-grid">
-          <article>
-            <h3 data-i18n="principles.p1t">研发导向</h3>
-            <p data-i18n="principles.p1d">基于真实使用场景持续优化产品结构与材料选择。</p>
+    <section class="section values-section" id="principles" aria-labelledby="values-main-heading">
+      <div class="wrap values">
+        <h2 id="values-main-heading" class="values__title" data-i18n="principles.title">合作与定制</h2>
+        <div class="values__grid">
+          <article class="value-card" data-reveal>
+            <div class="value-card__top">
+              <div class="value-card__icon" aria-hidden="true">
+                <img src="assets/icons/value-design.svg" width="64" height="64" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3 data-i18n="principles.p1t">设计研发</h3>
+            </div>
+            <p class="value-card__desc" data-i18n="principles.p1d">以研发设计为核心，持续上新和迭代产品。</p>
           </article>
-          <article>
-            <h3 data-i18n="principles.p2t">制造可靠</h3>
-            <p data-i18n="principles.p2d">从工艺到质控全流程管理，保证交付稳定一致。</p>
+          <article class="value-card" data-reveal>
+            <div class="value-card__top">
+              <div class="value-card__icon" aria-hidden="true">
+                <img src="assets/icons/value-manufacturing.svg" width="64" height="64" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3 data-i18n="principles.p2t">精益制造</h3>
+            </div>
+            <p class="value-card__desc" data-i18n="principles.p2d">高效能生产管理，保障生产品质与合同交期。</p>
           </article>
-          <article>
-            <h3 data-i18n="principles.p3t">全球服务</h3>
-            <p data-i18n="principles.p3d">通过多平台销售与服务网络，支持全球客户快速采购。</p>
+          <article class="value-card" data-reveal>
+            <div class="value-card__top">
+              <div class="value-card__icon" aria-hidden="true">
+                <img src="assets/icons/value-ip.svg" width="64" height="64" alt="" loading="lazy" decoding="async" />
+              </div>
+              <h3 data-i18n="principles.p3t">知识产权</h3>
+            </div>
+            <p class="value-card__desc" data-i18n="principles.p3d">全线产品获知识产权认证，保障商业安全与贸易合规。</p>
           </article>
+        </div>
+
+        <div id="partnership" class="values__panel" data-reveal>
+          <div class="values__panel-inner">
+            <p class="values__panel-desc partnership__desc" data-i18n="partnership.desc">
+              依托于多年的木工工具研发经验与精密制造实力，我们持续为全球市场输出高性能的工具产品。通过灵活的 OEM/ODM 合作模式与成熟的贸易服务体系，让优质的中国制造服务于全球木作爱好者。
+            </p>
+            <div class="partnership__actions">
+              <a class="btn btn-primary" href="mailto:nzh@ganweitools.com" data-i18n="partnership.btnEmail">邮件咨询</a>
+              <a class="btn btn-ghost" href="https://work.weixin.qq.com/kfid/kfce49870d26a578e7e" target="_blank" rel="noopener noreferrer" data-i18n="partnership.btnWechat">微信咨询</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -129,6 +159,10 @@
         <a href="https://www.youtube.com/@ganwei2212" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </div>
+    <div class="footer-brand wrap" aria-label="品牌口号">
+      <p class="footer-brand__line1" data-i18n="footer.tagline1">敢想，敢为。</p>
+      <p class="footer-brand__line2" data-i18n="footer.tagline2">Ganwei® | 专注木工工具研发与制造。</p>
+    </div>
     <p class="copyright">© <span id="year"></span> Ganwei Tools</p>
   </footer>
 
@@ -137,11 +171,11 @@
       "zh-CN": {
         "nav.categories": "分类",
         "nav.featured": "精选",
-        "nav.principles": "理念",
+        "nav.principles": "理念与合作",
         "nav.contact": "联系",
         "header.language": "语言",
-        "hero.title": "赋能 DIY 的工具方案",
-        "hero.desc": "Ganwei®敢为集研发、生产、销售于一体，为全球客户提供可靠、耐用、易上手的 DIY 工具解决方案。",
+        "hero.title": "赋能 DIY 无限可能",
+        "hero.desc": "Ganwei® 敢为| 集研发、生产于一体。为合作伙伴及用户提供专业的工具解决方案。",
         "hero.btnTaobao": "敢为制造-淘宝",
         "category.title": "按分类浏览",
         "category.c1": "手动工具",
@@ -158,28 +192,33 @@
         "featured.p4d": "支持规格、包装、套装结构定制。",
         "common.view": "查看产品 →",
         "common.contact": "联系定制 →",
-        "principles.title": "敢为的坚持",
-        "principles.p1t": "研发导向",
-        "principles.p1d": "基于真实使用场景持续优化产品结构与材料选择。",
-        "principles.p2t": "制造可靠",
-        "principles.p2d": "从工艺到质控全流程管理，保证交付稳定一致。",
-        "principles.p3t": "全球服务",
-        "principles.p3d": "通过多平台销售与服务网络，支持全球客户快速采购。",
+        "principles.title": "合作与定制",
+        "principles.p1t": "设计研发",
+        "principles.p1d": "以研发设计为核心，持续上新和迭代产品。",
+        "principles.p2t": "精益制造",
+        "principles.p2d": "高效能生产管理，保障生产品质与合同交期。",
+        "principles.p3t": "知识产权",
+        "principles.p3d": "全线产品获知识产权认证，保障商业安全与贸易合规。",
+        "partnership.desc": "依托于多年的木工工具研发经验与精密制造实力，我们持续为全球市场输出高性能的工具产品。通过灵活的 OEM/ODM 合作模式与成熟的贸易服务体系，让优质的中国制造服务于全球木作爱好者。",
+        "partnership.btnEmail": "邮件咨询",
+        "partnership.btnWechat": "微信咨询",
         "footer.sectionStore": "-官方商店-",
         "footer.sectionContact": "-联系我们-",
         "footer.sectionSocial": "-社交媒体-",
         "footer.taobao": "敢为制造-淘宝",
         "footer.aliexpressStore": "GanweiTools Store-速卖通",
-        "footer.wechat": "微信联系"
+        "footer.wechat": "微信联系",
+        "footer.tagline1": "敢想，敢为。",
+        "footer.tagline2": "Ganwei® | 专注木工工具研发与制造。"
       },
       "en": {
         "nav.categories": "Categories",
         "nav.featured": "Featured",
-        "nav.principles": "Principles",
+        "nav.principles": "Values & Partnership",
         "nav.contact": "Contact",
         "header.language": "Language",
-        "hero.title": "Tools that empower DIY.",
-        "hero.desc": "Ganwei®integrates R&D, manufacturing, and sales to deliver reliable and easy-to-use DIY tool solutions for global customers.",
+        "hero.title": "Empower DIY with endless possibilities.",
+        "hero.desc": "Ganwei® | Integrating R&D and manufacturing. Professional tool solutions for partners and users.",
         "hero.btnTaobao": "Ganwei Store-Taobao",
         "category.title": "Explore by category",
         "category.c1": "Hand Tools",
@@ -196,19 +235,24 @@
         "featured.p4d": "Support for specs, packaging, and kit structures.",
         "common.view": "View product →",
         "common.contact": "Contact for customization →",
-        "principles.title": "Ganwei of principle",
-        "principles.p1t": "R&D Driven",
-        "principles.p1d": "Continuously optimizing structures and materials for real-world use.",
-        "principles.p2t": "Reliable Manufacturing",
-        "principles.p2d": "End-to-end process and quality control for stable delivery.",
-        "principles.p3t": "Global Service",
-        "principles.p3d": "Supporting fast procurement through multi-platform channels.",
+        "principles.title": "Partnership & Customization",
+        "principles.p1t": "Design & R&D",
+        "principles.p1d": "R&D-led design at the core, with continuous new launches and product iterations.",
+        "principles.p2t": "Lean Manufacturing",
+        "principles.p2d": "High-efficiency production management ensuring quality and on-time contract delivery.",
+        "principles.p3t": "Intellectual Property",
+        "principles.p3d": "Full product line IP certification for commercial security and trade compliance.",
+        "partnership.desc": "With years of experience in woodworking tool R&D and precision manufacturing, we continuously deliver high-performance tools to the global market. Through flexible OEM/ODM programs and a mature trading service system, we bring quality Chinese manufacturing to woodworking enthusiasts worldwide.",
+        "partnership.btnEmail": "Email inquiry",
+        "partnership.btnWechat": "WeChat inquiry",
         "footer.sectionStore": "-Official Store-",
         "footer.sectionContact": "-Contact Us-",
         "footer.sectionSocial": "-Social Media-",
         "footer.taobao": "Ganwei Store-Taobao",
         "footer.aliexpressStore": "GanweiTools Store-AliExpress",
-        "footer.wechat": "WeChat Contact"
+        "footer.wechat": "WeChat Contact",
+        "footer.tagline1": "Dare to imagine. Dare to act.",
+        "footer.tagline2": "Ganwei® | Dedicated to woodworking tool R&D and manufacturing."
       }
     };
 
@@ -229,6 +273,29 @@
     langSelect.addEventListener("change", (e) => applyLanguage(e.target.value));
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* 理念与合作模块：滚动进入视口时淡入上浮（尊重系统减少动态效果） */
+    (function () {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const nodes = document.querySelectorAll("[data-reveal]");
+      if (!nodes.length) return;
+      if (reduce) {
+        nodes.forEach((el) => el.classList.add("is-visible"));
+        return;
+      }
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
+      );
+      nodes.forEach((el) => io.observe(el));
+    })();
   </script>
   <script src="hero-parallax.js" defer></script>
 </body>
