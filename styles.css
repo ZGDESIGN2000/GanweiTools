@@ -322,6 +322,10 @@ body {
 }
 
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
@@ -346,6 +350,55 @@ body {
 
 .btn-ghost:hover {
   border-color: #667389;
+}
+
+.products-store-cta .btn-primary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid #3a4250;
+}
+
+.products-store-cta .btn-primary:hover {
+  border-color: #667389;
+}
+
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon img {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+/* Hero 首屏两个主按钮：统一深色磨砂玻璃质感（只作用于 .hero 内） */
+.hero .hero-cta .btn-primary,
+.hero .hero-cta .btn-ghost {
+  border-radius: 999px;
+  border: 1px solid rgba(137, 163, 204, 0.55);
+  background: linear-gradient(
+      135deg,
+      rgba(24, 32, 54, 0.9),
+      rgba(8, 12, 22, 0.88)
+    );
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
+  color: #f5f8ff;
+}
+
+.hero .hero-cta .btn-primary:hover,
+.hero .hero-cta .btn-ghost:hover {
+  border-color: rgba(172, 198, 240, 0.9);
+  background: linear-gradient(
+      135deg,
+      rgba(30, 42, 72, 0.96),
+      rgba(10, 16, 30, 0.94)
+    );
 }
 
 .section {
