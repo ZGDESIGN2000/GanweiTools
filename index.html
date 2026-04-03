@@ -27,7 +27,7 @@
       <nav class="nav" aria-label="产品导航">
         <a href="#categories" data-i18n="nav.categories">分类</a>
         <a href="#featured" data-i18n="nav.featured">精选</a>
-        <a href="#principles" data-i18n="nav.principles">理念与合作</a>
+        <a href="#principles" data-i18n="nav.principles">合作</a>
         <a href="#contact" data-i18n="nav.contact">联系</a>
       </nav>
       <div class="header-actions">
@@ -98,7 +98,7 @@
       <div class="wrap values">
         <h2 id="values-main-heading" class="values__title" data-i18n="principles.title">合作与定制</h2>
         <div class="values__grid">
-          <article class="value-card" data-reveal>
+          <article class="value-card">
             <div class="value-card__top">
               <div class="value-card__icon" aria-hidden="true">
                 <img src="assets/icons/value-design.svg" width="64" height="64" alt="" loading="lazy" decoding="async" />
@@ -107,7 +107,7 @@
             </div>
             <p class="value-card__desc" data-i18n="principles.p1d">以研发设计为核心，持续上新和迭代产品。</p>
           </article>
-          <article class="value-card" data-reveal>
+          <article class="value-card">
             <div class="value-card__top">
               <div class="value-card__icon" aria-hidden="true">
                 <img src="assets/icons/value-manufacturing.svg" width="64" height="64" alt="" loading="lazy" decoding="async" />
@@ -116,7 +116,7 @@
             </div>
             <p class="value-card__desc" data-i18n="principles.p2d">高效能生产管理，保障生产品质与合同交期。</p>
           </article>
-          <article class="value-card" data-reveal>
+          <article class="value-card">
             <div class="value-card__top">
               <div class="value-card__icon" aria-hidden="true">
                 <img src="assets/icons/value-ip.svg" width="64" height="64" alt="" loading="lazy" decoding="async" />
@@ -127,7 +127,7 @@
           </article>
         </div>
 
-        <div id="partnership" class="values__panel" data-reveal>
+        <div id="partnership" class="values__panel">
           <div class="values__panel-inner">
             <p class="values__panel-desc partnership__desc" data-i18n="partnership.desc">
               依托于多年的木工工具研发经验与精密制造实力，我们持续为全球市场输出高性能的工具产品。通过灵活的 OEM/ODM 合作模式与成熟的贸易服务体系，让优质的中国制造服务于全球木作爱好者。
@@ -159,10 +159,6 @@
         <a href="https://www.youtube.com/@ganwei2212" target="_blank" rel="noopener noreferrer">YouTube</a>
       </div>
     </div>
-    <div class="footer-brand wrap" aria-label="品牌口号">
-      <p class="footer-brand__line1" data-i18n="footer.tagline1">敢想，敢为。</p>
-      <p class="footer-brand__line2" data-i18n="footer.tagline2">Ganwei® | 专注木工工具研发与制造。</p>
-    </div>
     <p class="copyright">© <span id="year"></span> Ganwei Tools</p>
   </footer>
 
@@ -171,7 +167,7 @@
       "zh-CN": {
         "nav.categories": "分类",
         "nav.featured": "精选",
-        "nav.principles": "理念与合作",
+        "nav.principles": "合作",
         "nav.contact": "联系",
         "header.language": "语言",
         "hero.title": "赋能 DIY 无限可能",
@@ -207,14 +203,12 @@
         "footer.sectionSocial": "-社交媒体-",
         "footer.taobao": "敢为制造-淘宝",
         "footer.aliexpressStore": "GanweiTools Store-速卖通",
-        "footer.wechat": "微信联系",
-        "footer.tagline1": "敢想，敢为。",
-        "footer.tagline2": "Ganwei® | 专注木工工具研发与制造。"
+        "footer.wechat": "微信联系"
       },
       "en": {
         "nav.categories": "Categories",
         "nav.featured": "Featured",
-        "nav.principles": "Values & Partnership",
+        "nav.principles": "Partnership",
         "nav.contact": "Contact",
         "header.language": "Language",
         "hero.title": "Empower DIY with endless possibilities.",
@@ -250,9 +244,7 @@
         "footer.sectionSocial": "-Social Media-",
         "footer.taobao": "Ganwei Store-Taobao",
         "footer.aliexpressStore": "GanweiTools Store-AliExpress",
-        "footer.wechat": "WeChat Contact",
-        "footer.tagline1": "Dare to imagine. Dare to act.",
-        "footer.tagline2": "Ganwei® | Dedicated to woodworking tool R&D and manufacturing."
+        "footer.wechat": "WeChat Contact"
       }
     };
 
@@ -273,29 +265,6 @@
     langSelect.addEventListener("change", (e) => applyLanguage(e.target.value));
 
     document.getElementById("year").textContent = new Date().getFullYear();
-
-    /* 理念与合作模块：滚动进入视口时淡入上浮（尊重系统减少动态效果） */
-    (function () {
-      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const nodes = document.querySelectorAll("[data-reveal]");
-      if (!nodes.length) return;
-      if (reduce) {
-        nodes.forEach((el) => el.classList.add("is-visible"));
-        return;
-      }
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              io.unobserve(entry.target);
-            }
-          });
-        },
-        { root: null, rootMargin: "0px 0px -10% 0px", threshold: 0.12 }
-      );
-      nodes.forEach((el) => io.observe(el));
-    })();
   </script>
   <script src="hero-parallax.js" defer></script>
 </body>

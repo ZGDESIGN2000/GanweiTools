@@ -438,16 +438,6 @@ body {
   border: 1px solid rgba(58, 66, 80, 0.95);
   background: linear-gradient(165deg, rgba(22, 26, 33, 0.92), rgba(13, 15, 18, 0.55));
   box-shadow: 0 16px 42px rgba(0, 0, 0, 0.24);
-  transition:
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.35s ease,
-    box-shadow 0.45s ease;
-}
-
-.value-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(132, 183, 255, 0.38);
-  box-shadow: 0 22px 56px rgba(0, 0, 0, 0.34);
 }
 
 /* 第一行：图标与标题横向对齐（垂直居中） */
@@ -530,48 +520,6 @@ body {
   align-items: center;
 }
 
-/* 滚动显现动效（由脚本添加 .is-visible） */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(22px);
-  transition:
-    opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-[data-reveal].is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.values__grid .value-card[data-reveal]:nth-child(1) {
-  transition-delay: 0.05s;
-}
-
-.values__grid .value-card[data-reveal]:nth-child(2) {
-  transition-delay: 0.12s;
-}
-
-.values__grid .value-card[data-reveal]:nth-child(3) {
-  transition-delay: 0.19s;
-}
-
-.values__panel[data-reveal] {
-  transition-delay: 0.1s;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-  }
-
-  .value-card:hover {
-    transform: none;
-  }
-}
-
 @media (max-width: 900px) {
   .values__grid {
     grid-template-columns: 1fr;
@@ -608,31 +556,8 @@ body {
   color: var(--accent);
 }
 
-/* 页脚品牌口号：强化记忆点 */
-.footer-brand {
-  margin-top: 2rem;
-  padding-top: 1.75rem;
-  border-top: 1px solid var(--line);
-  text-align: center;
-}
-
-.footer-brand__line1 {
-  margin: 0;
-  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  color: var(--text);
-}
-
-.footer-brand__line2 {
-  margin: 0.55rem 0 0;
-  font-size: clamp(0.92rem, 1.5vw, 1.02rem);
-  color: var(--text-soft);
-  letter-spacing: 0.04em;
-}
-
 .copyright {
-  margin: 1.2rem 0 0;
+  margin: 2rem 0 0;
   text-align: center;
   color: #8993a4;
   font-size: 0.82rem;
