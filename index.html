@@ -25,10 +25,9 @@
         <img class="brand__logo" src="ganwei.svg" alt="敢为 Ganwei 标志" />
       </a>
       <nav class="nav" aria-label="产品导航">
-        <a href="#categories" data-i18n="nav.categories">分类</a>
-        <a href="#featured" data-i18n="nav.featured">精选</a>
+        <a href="#top" data-i18n="nav.home">首页</a>
+        <a href="#products" data-i18n="nav.categories">产品</a>
         <a href="#principles" data-i18n="nav.principles">合作</a>
-        <a href="#contact" data-i18n="nav.contact">联系</a>
       </nav>
       <div class="header-actions">
         <label class="lang-switch" for="langSelect" data-i18n="header.language">语言</label>
@@ -49,47 +48,157 @@
         <p class="hero-desc" data-i18n="hero.desc">Ganwei® 敢为| 集研发、生产于一体。为合作伙伴及用户提供专业的工具解决方案。</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="hero.btnTaobao">敢为制造-淘宝</a>
-          <a class="btn btn-ghost" href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer">GanweiTools Store</a>
+          <a
+            class="btn btn-ghost"
+            href="https://ganwei.aliexpress.com/store/1101530604"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-i18n="hero.btnAliexpress"
+            >GanweiTools Store</a>
         </div>
       </div>
     </section>
 
-    <section class="section" id="categories">
+    <section class="section section-products" id="products" aria-labelledby="products-heading">
       <div class="wrap">
-        <h2 data-i18n="category.title">Explore by category</h2>
-        <div class="category-row">
-          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="category.c1">手动工具</a>
-          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="category.c2">收纳套装</a>
-          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="category.c3">耗材配件</a>
-          <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer">OEM / ODM</a>
+        <h2 id="products-heading" data-i18n="category.title">精选产品</h2>
+        <p class="products-subheading" data-i18n="products.subheading">
+          Ganwei® | 敢想，敢为，专注工具研发与制造。
+        </p>
+        <div class="products-masonry" role="list">
+          <article class="product-poster" role="listitem">
+            <a
+              class="product-poster__link"
+              href="https://item.taobao.com/item.htm?id=997383926944"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="product-poster__visual" aria-hidden="true">
+                <img src="assets/products/poster-1.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <span class="product-poster__peek" aria-hidden="true" data-i18n="products.p1t">手动工具</span>
+              <div class="product-poster__hover">
+                <h3 class="product-poster__title" data-i18n="products.p1t">手动工具</h3>
+                <p class="product-poster__desc" data-i18n="products.p1d">锯、刨、凿、夹具等手工与电动辅具，覆盖木作加工与修整场景。</p>
+                <span class="product-poster__cta btn btn-primary" data-i18n="products.p1btn">访问淘宝店铺</span>
+              </div>
+            </a>
+          </article>
+          <article class="product-poster" role="listitem">
+            <a
+              class="product-poster__link"
+              href="https://item.taobao.com/item.htm?id=971851030548"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="product-poster__visual" aria-hidden="true">
+                <img src="assets/products/poster-2.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <span class="product-poster__peek" aria-hidden="true" data-i18n="products.p2t">收纳套装</span>
+              <div class="product-poster__hover">
+                <h3 class="product-poster__title" data-i18n="products.p2t">收纳套装</h3>
+                <p class="product-poster__desc" data-i18n="products.p2d">工具箱与套装方案，便于分类收纳与携带作业。</p>
+                <span class="product-poster__cta btn btn-primary" data-i18n="products.p2btn">访问淘宝店铺</span>
+              </div>
+            </a>
+          </article>
+          <article class="product-poster" role="listitem">
+            <a
+              class="product-poster__link"
+              href="https://item.taobao.com/item.htm?id=1005334781411"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="product-poster__visual" aria-hidden="true">
+                <img src="assets/products/poster-3.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <span class="product-poster__peek" aria-hidden="true" data-i18n="products.p3t">速卖通旗舰店</span>
+              <div class="product-poster__hover">
+                <h3 class="product-poster__title" data-i18n="products.p3t">速卖通旗舰店</h3>
+                <p class="product-poster__desc" data-i18n="products.p3d">面向海外用户的官方店铺，跨境物流与本地化支持。</p>
+                <span class="product-poster__cta btn btn-primary" data-i18n="products.p3btn">访问速卖通</span>
+              </div>
+            </a>
+          </article>
+          <article class="product-poster" role="listitem">
+            <a
+              class="product-poster__link"
+              href="https://item.taobao.com/item.htm?id=717677400245"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="product-poster__visual" aria-hidden="true">
+                <img src="assets/products/poster-4.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <span class="product-poster__peek" aria-hidden="true" data-i18n="products.p4t">耗材配件</span>
+              <div class="product-poster__hover">
+                <h3 class="product-poster__title" data-i18n="products.p4t">耗材配件</h3>
+                <p class="product-poster__desc" data-i18n="products.p4d">批头、连接件与易耗件，保障项目连续施工。</p>
+                <span class="product-poster__cta btn btn-primary" data-i18n="products.p4btn">访问淘宝店铺</span>
+              </div>
+            </a>
+          </article>
+          <article class="product-poster" role="listitem">
+            <a
+              class="product-poster__link"
+              href="https://item.taobao.com/item.htm?id=916210241705"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="product-poster__visual" aria-hidden="true">
+                <img src="assets/products/poster-5.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <span class="product-poster__peek" aria-hidden="true" data-i18n="products.p5t">DIY 组合套装</span>
+              <div class="product-poster__hover">
+                <h3 class="product-poster__title" data-i18n="products.p5t">DIY 组合套装</h3>
+                <p class="product-poster__desc" data-i18n="products.p5d">家用与入门级木作的一站式组合，开箱即用。</p>
+                <span class="product-poster__cta btn btn-primary" data-i18n="products.p5btn">访问淘宝店铺</span>
+              </div>
+            </a>
+          </article>
+          <article class="product-poster" role="listitem">
+            <a class="product-poster__link" href="https://item.taobao.com/item.htm?id=1006722351094">
+              <div class="product-poster__visual" aria-hidden="true">
+                <img src="assets/products/poster-6.jpg" alt="" loading="lazy" decoding="async" />
+              </div>
+              <span class="product-poster__peek" aria-hidden="true" data-i18n="products.p6t">OEM / ODM</span>
+              <div class="product-poster__hover">
+                <h3 class="product-poster__title" data-i18n="products.p6t">OEM / ODM</h3>
+                <p class="product-poster__desc" data-i18n="products.p6d">支持规格、包装与套装结构定制，欢迎邮件沟通需求。</p>
+                <span class="product-poster__cta btn btn-primary" data-i18n="products.p6btn">邮件联系</span>
+              </div>
+            </a>
+          </article>
         </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="featured">
-      <div class="wrap">
-        <h2 data-i18n="featured.title">Popular essentials</h2>
-        <div class="product-grid">
-          <article class="product">
-            <h3 data-i18n="featured.p1t">DIY 组合工具套装</h3>
-            <p data-i18n="featured.p1d">覆盖家庭维修与日常安装场景。</p>
-            <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="common.view">查看产品 →</a>
-          </article>
-          <article class="product">
-            <h3 data-i18n="featured.p2t">多规格螺丝刀系列</h3>
-            <p data-i18n="featured.p2d">舒适握持，适配多规格维修需求。</p>
-            <a href="https://shop162322588.taobao.com/" target="_blank" rel="noopener noreferrer" data-i18n="common.view">查看产品 →</a>
-          </article>
-          <article class="product">
-            <h3 data-i18n="featured.p3t">便携工具箱</h3>
-            <p data-i18n="featured.p3d">高效收纳，便于携带与现场作业。</p>
-            <a href="https://ganwei.aliexpress.com/store/1101530604" target="_blank" rel="noopener noreferrer" data-i18n="common.view">查看产品 →</a>
-          </article>
-          <article class="product">
-            <h3 data-i18n="featured.p4t">定制化工具方案</h3>
-            <p data-i18n="featured.p4d">支持规格、包装、套装结构定制。</p>
-            <a href="mailto:nzh@ganweitools.com" data-i18n="common.contact">联系定制 →</a>
-          </article>
+        <div class="products-store-cta">
+          <p class="products-store-cta__hint" data-i18n="products.storeHint">更多产品请访问商店查看</p>
+          <span class="products-store-cta__arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M6 9l6 6 6-6"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </span>
+          <div class="hero-cta products-store-cta__buttons">
+            <a
+              class="btn btn-primary"
+              href="https://shop162322588.taobao.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="hero.btnTaobao"
+              >敢为制造-淘宝</a>
+            <a
+              class="btn btn-ghost"
+              href="https://ganwei.aliexpress.com/store/1101530604"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="hero.btnAliexpress"
+              >GanweiTools Store</a>
+          </div>
         </div>
       </div>
     </section>
@@ -165,29 +274,35 @@
   <script>
     const i18n = {
       "zh-CN": {
-        "nav.categories": "分类",
-        "nav.featured": "精选",
+        "nav.home": "首页",
+        "nav.categories": "产品",
         "nav.principles": "合作",
-        "nav.contact": "联系",
         "header.language": "语言",
         "hero.title": "赋能 DIY 无限可能",
         "hero.desc": "Ganwei® 敢为| 集研发、生产于一体。为合作伙伴及用户提供专业的工具解决方案。",
         "hero.btnTaobao": "敢为制造-淘宝",
-        "category.title": "按分类浏览",
-        "category.c1": "手动工具",
-        "category.c2": "收纳套装",
-        "category.c3": "耗材配件",
-        "featured.title": "精选产品",
-        "featured.p1t": "DIY 组合工具套装",
-        "featured.p1d": "覆盖家庭维修与日常安装场景。",
-        "featured.p2t": "多规格螺丝刀系列",
-        "featured.p2d": "舒适握持，适配多规格维修需求。",
-        "featured.p3t": "便携工具箱",
-        "featured.p3d": "高效收纳，便于携带与现场作业。",
-        "featured.p4t": "定制化工具方案",
-        "featured.p4d": "支持规格、包装、套装结构定制。",
-        "common.view": "查看产品 →",
-        "common.contact": "联系定制 →",
+        "hero.btnAliexpress": "GanweiTools Store",
+        "category.title": "精选产品",
+        "products.subheading": "Ganwei® | 敢想，敢为，专注工具研发与制造。",
+        "products.storeHint": "更多产品请访问商店查看",
+        "products.p1t": "木工桌尾钳",
+        "products.p1d": "精密不锈钢丝杆，惯性快移桌钳。",
+        "products.p1btn": "Ganwei® | MG0-000-0060C",
+        "products.p2t": "木工鸟刨",
+        "products.p2d": "握持趁手，可推可拉，尽在掌握。",
+        "products.p2btn": "Ganwei® | MG0-000-0171",
+        "products.p3t": "木工低角度铝刨",
+        "products.p3d": "两款尺寸，精致小巧。",
+        "products.p3btn": "Ganwei® | MG0-000-0053",
+        "products.p4t": "电钻车圆工具",
+        "products.p4d": "DIY圆木棒轻松搞定。",
+        "products.p4btn": "Ganwei® | MG0-000-0068",
+        "products.p5t": "木工桌惯性虎钳",
+        "products.p5d": "真材实料精细加工，惯性快移。",
+        "products.p5btn": "Ganwei® | MG0-000-0060A",
+        "products.p6t": "攻丝悬臂支架",
+        "products.p6d": "气撑悬臂，攻丝利器。",
+        "products.p6btn": "Ganwei® | MG0-000-0107",
         "principles.title": "合作与定制",
         "principles.p1t": "设计研发",
         "principles.p1d": "以研发设计为核心，持续上新和迭代产品。",
@@ -206,29 +321,35 @@
         "footer.wechat": "微信联系"
       },
       "en": {
-        "nav.categories": "Categories",
-        "nav.featured": "Featured",
+        "nav.home": "Home",
+        "nav.categories": "Products",
         "nav.principles": "Partnership",
-        "nav.contact": "Contact",
         "header.language": "Language",
         "hero.title": "Empower DIY with endless possibilities.",
         "hero.desc": "Ganwei® | Integrating R&D and manufacturing. Professional tool solutions for partners and users.",
         "hero.btnTaobao": "Ganwei Store-Taobao",
-        "category.title": "Explore by category",
-        "category.c1": "Hand Tools",
-        "category.c2": "Storage Kits",
-        "category.c3": "Consumables & Parts",
-        "featured.title": "Popular essentials",
-        "featured.p1t": "DIY Tool Set",
-        "featured.p1d": "For home repair and daily installation tasks.",
-        "featured.p2t": "Multi-bit Screwdriver Series",
-        "featured.p2d": "Comfortable grip for multi-scenario maintenance.",
-        "featured.p3t": "Portable Toolbox",
-        "featured.p3d": "Efficient storage for field and mobile work.",
-        "featured.p4t": "Customized Tool Solutions",
-        "featured.p4d": "Support for specs, packaging, and kit structures.",
-        "common.view": "View product →",
-        "common.contact": "Contact for customization →",
+        "hero.btnAliexpress": "GanweiTools Store",
+        "category.title": "Featured products",
+        "products.subheading": "Ganwei® | Dare to imagine, dare to create. Focused on tool R&D and manufacturing.",
+        "products.storeHint": "Visit our stores to see more products.",
+        "products.p1t": "Workbench tail vise",
+        "products.p1d": "Precision stainless-steel leadscrew with inertia quick-travel action for woodworking benches.",
+        "products.p1btn": "Ganwei® | MG0-000-0060C",
+        "products.p2t": "Woodworking bird plane",
+        "products.p2d": "Comfortable in hand for both push and pull strokes, giving you precise control.",
+        "products.p2btn": "Ganwei® | MG0-000-0171",
+        "products.p3t": "Low-angle aluminum block plane",
+        "products.p3d": "Two compact sizes with refined machining for delicate trimming work.",
+        "products.p3btn": "Ganwei® | MG0-000-0053",
+        "products.p4t": "Drill-powered dowel maker",
+        "products.p4d": "Quickly turn round wooden dowels using a handheld drill.",
+        "products.p4btn": "Ganwei® | MG0-000-0068",
+        "products.p5t": "Workbench inertia vise",
+        "products.p5d": "Solid build and fine machining with smooth inertia-assisted travel.",
+        "products.p5btn": "Ganwei® | MG0-000-0060A",
+        "products.p6t": "Tapping support arm",
+        "products.p6d": "Gas-spring support arm that stabilizes workpieces for tapping.",
+        "products.p6btn": "Ganwei® | MG0-000-0107",
         "principles.title": "Partnership & Customization",
         "principles.p1t": "Design & R&D",
         "principles.p1d": "R&D-led design at the core, with continuous new launches and product iterations.",
