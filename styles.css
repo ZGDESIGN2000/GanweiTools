@@ -468,8 +468,8 @@ body {
 
 .value-card__icon img {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 55px;
+  height: 55px;
   object-fit: contain;
 }
 
