@@ -796,21 +796,17 @@ body {
   text-align: center;
   color: #8993a4;
   font-size: 0.82rem;
+  line-height: 1.5;
+  white-space: nowrap;
 }
 
-.footer-beian {
-  margin: 0.45rem 0 0;
-  text-align: center;
-  font-size: 0.82rem;
-}
-
-.footer-beian a {
-  color: #8993a4;
+.copyright a {
+  color: inherit;
+  font-size: inherit;
   text-decoration: none;
 }
 
-.footer-beian a:hover {
-  color: var(--accent);
+.copyright a:hover {
   text-decoration: underline;
 }
 
